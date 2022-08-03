@@ -18,8 +18,17 @@ BOARD_BOOT_HEADER_VERSION := 3
 # PlatformConfig
 include device/motorola/sm6150-common/PlatformConfig.mk
 
-# Kernel
+# Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := hanoip
+
+# Kernel
+BOARD_KERNEL_SEPARATED_DTBO := true
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_SOURCE := kernel/motorola/hanoip
+TARGET_KERNEL_CONFIG := hanoip_defconfig
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := r383902
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r383902
 
 # Platform
 PRODUCT_PLATFORM := sm6150
