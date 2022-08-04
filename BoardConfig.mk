@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+DEVICE_PATH := device/motorola/hanoip
+
 # Boot Header
 BOARD_BOOT_HEADER_VERSION := 3
 
@@ -20,6 +22,9 @@ include device/motorola/sm6150-common/PlatformConfig.mk
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := hanoip
+
+# HIDL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/vendor_framework_compatibility_matrix.xml
 
 # Kernel
 BOARD_KERNEL_SEPARATED_DTBO := true
